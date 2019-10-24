@@ -1,12 +1,18 @@
 import React from 'react';
 
+import Deck from './deck';
+
 const Page = (props) => {
 
   const content = props.content || [];
 
   return (
     <>
-      {content.map( (deck,i) => (
+      {content.forEach(deck => (
+        <Deck data={deck} />
+    ))}
+
+      {/* {content.map( (deck,i) => (
 
         <section className="deck">
            <header><h2>{deck.title}</h2></header>
@@ -33,7 +39,7 @@ const Page = (props) => {
 
         </section>
 
-      ))}
+                  ))} */}
     </>
   );
 };
